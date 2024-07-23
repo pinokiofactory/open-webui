@@ -49,7 +49,7 @@ module.exports = {
       } else if (updating) {
         return [{
           default: true,
-          icon: 'fa-solid fa-plug',
+          icon: 'fa-solid fa-arrows-rotate',
           text: "Updating...",
           href: "update.js",
         }]
@@ -95,7 +95,7 @@ module.exports = {
             }
           })
         }, {
-          icon: "fa-solid fa-arrows-update",
+          icon: "fa-solid fa-arrows-rotate",
           text: "Update",
           href: "update.js",
         }, {
