@@ -61,14 +61,41 @@ module.exports = {
           href: "reset.js",
         }]
       } else {
-        let o = [{
+        if (kernel.jsdom) {
+          let JSDOM = kernel.jsdom.JSDOM
+          let names = []
+          try {
+            let dom = await JSDOM.fromURL("https://ollama.com/library")
+            let els = dom.window.document.querySelectorAll("#repo li a")
+            let urls = []
+            for(let el of els) {
+              urls.push(el.href)
+              names.push(new URL(el.href).pathname.split("/").filter(x => x)[1])
+            }
+            console.log("names", names)
+          } catch (e) {
+          }
+        }
+        return [{
           default: true,
           icon: "fa-solid fa-power-off",
           text: "Start",
           href: "start.js",
-        }]
-        o = o.concat([{
-          icon: "fa-solid fa-plug",
+        }, {
+          icon: "fa-solid fa-download",
+          text: "Download Models",
+          menu: names.map((name) => {
+            return {
+              icon: "fa-solid fa-circle-down",
+              text: name,
+              href: "down.json",
+              params: {
+                name
+              }
+            }
+          })
+        }, {
+          icon: "fa-solid fa-arrows-update",
           text: "Update",
           href: "update.js",
         }, {
@@ -80,7 +107,6 @@ module.exports = {
           text: "Factory Reset",
           href: "reset.js",
         }])
-        return  o
       }
     } else {
       return [{
