@@ -2,8 +2,7 @@ module.exports = {
   "run": [{
     "method": "shell.run",
     "params": {
-      //"message": "git clone https://github.com/open-webui/open-webui app"
-      "message": "git clone https://github.com/cocktailpeanut/open-webui app"
+      "message": "git clone https://github.com/open-webui/open-webui app"
     }
   }, {
     "method": "fs.copy",
@@ -11,18 +10,6 @@ module.exports = {
       "src": "app/.env.example",
       "dest": "app/.env"
     }
-//  }, {
-//    "method": "fs.copy",
-//    "params": {
-//      "src": "start.bat",
-//      "dest": "app/backend/s.bat"
-//    }
-//  }, {
-//    "method": "fs.copy",
-//    "params": {
-//      "src": "start.sh",
-//      "dest": "app/backend/s.sh"
-//    }
   }, {
     "method": "shell.run",
     "params": {
@@ -42,7 +29,9 @@ module.exports = {
       "path": "app/backend"
     }
   }, {
-    "method": "input",
-    "params": { "title": "Install Success", "description": "Go back to the dashboard and launch the app!" }
+    "method": "fs.link",
+    "params": {
+      "venv": "env"
+    }
   }]
 }

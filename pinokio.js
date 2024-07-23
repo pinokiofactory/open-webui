@@ -1,6 +1,6 @@
 const path = require('path')
 module.exports = {
-  version: "1.2",
+  version: "2.0",
   title: "Open WebUI",
   description: "User-friendly WebUI for LLMs, supported LLM runners include Ollama and OpenAI-compatible APIs https://github.com/open-webui/open-webui",
   icon: "icon.png",
@@ -14,6 +14,8 @@ module.exports = {
     let installing = await kernel.running(__dirname, "install.js")
     let installed = await kernel.exists(__dirname, "app", "backend", "env")
     let running = await kernel.running(__dirname, "start.js")
+    let updating = await kernel.running(__dirname, "update.js")
+    let resetting = await kernel.running(__dirname, "reset.js")
     if (installing) {
       return [{
         default: true,
@@ -44,6 +46,20 @@ module.exports = {
             href: "start.js",
           }]
         }
+      } else if (updating) {
+        return [{
+          default: true,
+          icon: 'fa-solid fa-plug',
+          text: "Updating...",
+          href: "update.js",
+        }]
+      } else if (resetting) {
+        return [{
+          default: true,
+          icon: 'fa-solid fa-broom',
+          text: "Resetting...",
+          href: "reset.js",
+        }]
       } else {
         let o = [{
           default: true,

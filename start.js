@@ -21,7 +21,6 @@ module.exports = async (kernel) => {
           HOST: "127.0.0.1"
         },
         "venv": "env",
-        //"message": "{{platform === 'win32' ? 's.bat' : 'bash s.sh'}}",
         "message": "{{platform === 'win32' ? 'start_windows.bat' : 'bash start.sh'}}",
         "on": [{ "event": "/http://[0-9.:]+/", "done": true }]
       }
@@ -29,12 +28,6 @@ module.exports = async (kernel) => {
       "method": "local.set",
       "params": {
         "url": "{{input.event[0]}}"
-      }
-    }, {
-      "method": "proxy.start",
-      "params": {
-        "uri": "{{local.url}}",
-        "name": "Local Sharing"
       }
     }]
   }
