@@ -61,9 +61,9 @@ module.exports = {
           href: "reset.js",
         }]
       } else {
+        let names = []
         if (kernel.jsdom) {
           let JSDOM = kernel.jsdom.JSDOM
-          let names = []
           try {
             let dom = await JSDOM.fromURL("https://ollama.com/library")
             let els = dom.window.document.querySelectorAll("#repo li a")
@@ -106,7 +106,7 @@ module.exports = {
           icon: "fa-solid fa-broom",
           text: "Factory Reset",
           href: "reset.js",
-        }])
+        }]
       }
     } else {
       return [{
