@@ -61,39 +61,39 @@ module.exports = {
           href: "reset.js",
         }]
       } else {
-        let names = []
-        if (kernel.jsdom) {
-          let JSDOM = kernel.jsdom.JSDOM
-          try {
-            let dom = await JSDOM.fromURL("https://ollama.com/library")
-            let els = dom.window.document.querySelectorAll("#repo li a")
-            let urls = []
-            for(let el of els) {
-              urls.push(el.href)
-              names.push(new URL(el.href).pathname.split("/").filter(x => x)[1])
-            }
-            console.log("names", names)
-          } catch (e) {
-          }
-        }
+//        let names = []
+//        if (kernel.jsdom) {
+//          let JSDOM = kernel.jsdom.JSDOM
+//          try {
+//            let dom = await JSDOM.fromURL("https://ollama.com/library")
+//            let els = dom.window.document.querySelectorAll("#repo li a")
+//            let urls = []
+//            for(let el of els) {
+//              urls.push(el.href)
+//              names.push(new URL(el.href).pathname.split("/").filter(x => x)[1])
+//            }
+//            console.log("names", names)
+//          } catch (e) {
+//          }
+//        }
         return [{
           default: true,
           icon: "fa-solid fa-power-off",
           text: "Start",
           href: "start.js",
-        }, {
-          icon: "fa-solid fa-download",
-          text: "Download Models",
-          menu: names.map((name) => {
-            return {
-              icon: "fa-solid fa-circle-down",
-              text: name,
-              href: "down.js",
-              params: {
-                name
-              }
-            }
-          })
+//        }, {
+//          icon: "fa-solid fa-download",
+//          text: "Download Models",
+//          menu: names.map((name) => {
+//            return {
+//              icon: "fa-solid fa-circle-down",
+//              text: name,
+//              href: "down.js",
+//              params: {
+//                name
+//              }
+//            }
+//          })
         }, {
           icon: "fa-solid fa-arrows-rotate",
           text: "Update",
