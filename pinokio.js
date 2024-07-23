@@ -88,7 +88,7 @@ module.exports = {
             return {
               icon: "fa-solid fa-circle-down",
               text: name,
-              href: "down.json",
+              href: "down.js",
               params: {
                 name
               }
