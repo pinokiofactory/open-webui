@@ -11,11 +11,12 @@ module.exports = {
     href: "https://ollama.com/"
   }],
   menu: async (kernel) => {
-    let installing = await kernel.running(__dirname, "install.js")
+    let installing = kernel.running(__dirname, "install.js")
     let installed = await kernel.exists(__dirname, "app", "backend", "env")
-    let running = await kernel.running(__dirname, "start.js")
-    let updating = await kernel.running(__dirname, "update.js")
-    let resetting = await kernel.running(__dirname, "reset.js")
+    let running = kernel.running(__dirname, "start.js")
+    let updating = kernel.running(__dirname, "update.js")
+    let resetting = kernel.running(__dirname, "reset.js")
+    console.log(">>>>>>>> LOG", { installing, installed, running, updating, resetting })
     if (installing) {
       return [{
         default: true,
