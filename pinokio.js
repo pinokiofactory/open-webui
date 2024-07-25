@@ -16,6 +16,7 @@ module.exports = {
     let running = kernel.running(__dirname, "start.js")
     let updating = kernel.running(__dirname, "update.js")
     let resetting = kernel.running(__dirname, "reset.js")
+    console.log(">>>>>>>> Running Status:", kernel.api.running)
     console.log(">>>>>>>> LOG", { installing, installed, running, updating, resetting })
     if (installing) {
       return [{
