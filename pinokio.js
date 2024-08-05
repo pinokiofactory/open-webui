@@ -10,12 +10,18 @@ module.exports = {
     description: "Get up and running with large language models.",
     href: "https://ollama.com/"
   }],
-  menu: async (kernel) => {
-    let installing = kernel.running(__dirname, "install.js")
-    let installed = await kernel.exists(__dirname, "app", "backend", "env")
-    let running = kernel.running(__dirname, "start.js")
-    let updating = kernel.running(__dirname, "update.js")
-    let resetting = kernel.running(__dirname, "reset.js")
+  menu: async (kernel, info) => {
+    //let installing = kernel.running(__dirname, "install.js")
+    //let installed = await kernel.exists(__dirname, "app", "backend", "env")
+    //let running = kernel.running(__dirname, "start.js")
+    //let updating = kernel.running(__dirname, "update.js")
+    //let resetting = kernel.running(__dirname, "reset.js")
+
+    let installing = info.running("install.js")
+    let installed = info.exists("app/backend/env")
+    let running = info.running("start.js")
+    let updating = info.running("update.js")
+    let resetting = info.running("reset.js")
     console.log(">>>>>>>> __dirname", __dirname)
     console.log(">>>>>>>> Install Path", path.resolve(__dirname, "install.js"))
     console.log(">>>>>>>> Start Path", path.resolve(__dirname, "start.js"))
