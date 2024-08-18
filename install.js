@@ -13,6 +13,11 @@ module.exports = {
   }, {
     "method": "shell.run",
     "params": {
+      "message": "conda install -c conda-forge nodejs=20.16.0"
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
       "message": [
         "npm i",
         "npm run build"
