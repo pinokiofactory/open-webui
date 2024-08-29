@@ -13,6 +13,10 @@ module.exports = {
   }, {
     "method": "shell.run",
     "params": {
+      "conda": {
+        "path": "open-webui",
+        "python": "python=3.11"
+      },
       "message": "conda install -y -c conda-forge nodejs=20.12.2"
     }
   }, {
@@ -27,6 +31,9 @@ module.exports = {
   }, {
     "method": "shell.run",
     "params": {
+      "conda": {
+        "path": "open-webui",
+      },
       "message": [
         "pip install -r requirements.txt"
       ],
