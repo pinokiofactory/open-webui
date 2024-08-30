@@ -33,8 +33,7 @@ module.exports = {
     "method": "shell.run",
     "params": {
       "conda": {
-        "path": "open-webui",
-        "python": "python=3.11"
+        "path": "open-webui"
       },
       "message": [
         "pip install -r requirements.txt"
