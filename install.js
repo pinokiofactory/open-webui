@@ -34,6 +34,9 @@ module.exports = {
   }, {
     "method": "shell.run",
     "params": {
+      "conda": {
+        "path": "../conda_env"
+      },
       "message": [
         "npm i",
         "npm run build"
