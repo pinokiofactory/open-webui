@@ -18,7 +18,18 @@ module.exports = {
         "python": "python=3.11"
       },
       "path": "app/backend",
-      "message": "conda install -y -c conda-forge nodejs=20.12.2"
+      "message": [
+        "conda install -y -c conda-forge nodejs=20.12.2",
+      ]
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "path": "app/backend",
+      "message": [
+        "{{path.resolve(cwd, 'app/backend/conda_env/python')}} --version",
+        "{{path.resolve(cwd, 'app/backend/conda_env/python')}} -m venv env"
+      ]
     }
   }, {
     "method": "shell.run",
