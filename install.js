@@ -23,7 +23,7 @@ module.exports = {
       ]
     }
   }, {
-    "method": "set",
+    "method": "local.set",
     "params": {
       "python_path": "{{platform === 'win32' ? 'app/backend/conda_env/python' : 'app/backend/conda_env/bin/python'}}",
       "node_path": "{{platform === 'win32' ? 'backend/conda_env' : 'backend/conda_env/bin'}}",
