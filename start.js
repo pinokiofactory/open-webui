@@ -6,7 +6,7 @@ module.exports = async (kernel) => {
       "method": "shell.run",
       "params": {
         "conda": {
-          "path": "open-webui"
+          "path": "conda_env",
         },
         "path": "app/backend",
         "env": {

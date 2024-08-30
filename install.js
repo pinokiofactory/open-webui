@@ -14,7 +14,7 @@ module.exports = {
     "method": "shell.run",
     "params": {
       "conda": {
-        "path": "open-webui",
+        "path": "conda_env",
         "python": "python=3.11"
       },
       "path": "app/backend",
@@ -33,7 +33,7 @@ module.exports = {
     "method": "shell.run",
     "params": {
       "conda": {
-        "path": "open-webui"
+        "path": "conda_env",
       },
       "message": [
         "pip install -r requirements.txt"
@@ -41,10 +41,10 @@ module.exports = {
       "venv": "env",
       "path": "app/backend"
     }
-  }, {
-    "method": "fs.link",
-    "params": {
-      "venv": "app/backend/env"
-    }
+//  }, {
+//    "method": "fs.link",
+//    "params": {
+//      "venv": "app/backend/env"
+//    }
   }]
 }
