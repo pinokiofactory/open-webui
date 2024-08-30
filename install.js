@@ -26,7 +26,7 @@ module.exports = {
     "method": "local.set",
     "params": {
       "python_path": "{{platform === 'win32' ? 'app/backend/conda_env/python' : 'app/backend/conda_env/bin/python'}}",
-      "node_path": "{{platform === 'win32' ? 'backend/conda_env' : 'backend/conda_env/bin'}}",
+      "node_path": "{{platform === 'win32' ? 'app/backend/conda_env' : 'app/backend/conda_env/bin'}}",
     }
   }, {
     "method": "shell.run",
@@ -40,15 +40,11 @@ module.exports = {
   }, {
     "method": "shell.run",
     "params": {
-      "conda": {
-        "path": "backend/conda_env"
-      },
       "message": [
         "{{path.resolve(cwd, local.node_path, 'node') + ' --version'}}",
         "{{path.resolve(cwd, local.node_path, 'npm') + ' i'}}",
         "{{path.resolve(cwd, local.node_path, 'npm') + ' run build'}}",
       ],
-      "path": "app"
     }
   }, {
     "method": "shell.run",
