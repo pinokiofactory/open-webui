@@ -1,4 +1,5 @@
 module.exports = {
+  "python_path": "{{platform === 'win32' ? 'app/backend/conda_env/python' : 'app/backend/conda_env/bin/python'}}",
   "run": [{
     "method": "shell.run",
     "params": {
@@ -27,8 +28,8 @@ module.exports = {
     "params": {
       "path": "app/backend",
       "message": [
-        "{{path.resolve(cwd, 'app/backend/conda_env/python')}} --version",
-        "{{path.resolve(cwd, 'app/backend/conda_env/python')}} -m venv env"
+        "{{path.resolve(cwd, self.python_path)}} --version",
+        "{{path.resolve(cwd, self.python_path)}} -m venv env"
       ]
     }
   }, {
