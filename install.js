@@ -34,7 +34,7 @@ module.exports = {
       "path": "app/backend",
       "message": [
         "{{path.resolve(cwd, local.python_path) + ' --version'}}",
-        "{{path.resolve(cwd, local.python_path) + '-m venv env'}}"
+        "{{path.resolve(cwd, local.python_path) + ' -m venv env'}}"
       ]
     }
   }, {
