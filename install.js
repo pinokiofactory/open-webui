@@ -1,5 +1,6 @@
 module.exports = {
   "python_path": "{{platform === 'win32' ? 'app/backend/conda_env/python' : 'app/backend/conda_env/bin/python'}}",
+  "node_path": "{{platform === 'win32' ? 'backend/conda_env' : 'backend/conda_env/bin'}}",
   "run": [{
     "method": "shell.run",
     "params": {
@@ -39,8 +40,9 @@ module.exports = {
         "path": "backend/conda_env"
       },
       "message": [
-        "npm i",
-        "npm run build"
+        "{{path.resolve(cwd, self.node_path, 'node')}} --version",
+        "{{path.resolve(cwd, self.node_path, 'npm')}} i",
+        "{{path.resolve(cwd, self.node_path, 'npm')}} run build",
       ],
       "path": "app"
     }
