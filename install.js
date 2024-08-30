@@ -40,6 +40,9 @@ module.exports = {
   }, {
     "method": "shell.run",
     "params": {
+      "conda": {
+        "path": "backend/conda_env",
+      },
       "message": [
         "{{path.resolve(cwd, local.node_path, 'node') + ' --version'}}",
         "{{path.resolve(cwd, local.node_path, 'npm') + ' i'}}",
