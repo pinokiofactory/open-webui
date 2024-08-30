@@ -45,6 +45,7 @@ module.exports = {
         "{{path.resolve(cwd, local.node_path, 'npm') + ' i'}}",
         "{{path.resolve(cwd, local.node_path, 'npm') + ' run build'}}",
       ],
+      "path": "app"
     }
   }, {
     "method": "shell.run",
