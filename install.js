@@ -33,8 +33,8 @@ module.exports = {
     "params": {
       "path": "app/backend",
       "message": [
-        "{{path.resolve(cwd, local.python_path)}} --version",
-        "{{path.resolve(cwd, local.python_path)}} -m venv env"
+        "{{path.resolve(cwd, local.python_path) + ' --version'}}",
+        "{{path.resolve(cwd, local.python_path) + '-m venv env'}}"
       ]
     }
   }, {
@@ -44,9 +44,9 @@ module.exports = {
         "path": "backend/conda_env"
       },
       "message": [
-        "{{path.resolve(cwd, local.node_path, 'node')}} --version",
-        "{{path.resolve(cwd, local.node_path, 'npm')}} i",
-        "{{path.resolve(cwd, local.node_path, 'npm')}} run build",
+        "{{path.resolve(cwd, local.node_path, 'node') + ' --version'}}",
+        "{{path.resolve(cwd, local.node_path, 'npm') + ' i'}}",
+        "{{path.resolve(cwd, local.node_path, 'npm') + ' run build'}}",
       ],
       "path": "app"
     }
