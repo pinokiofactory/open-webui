@@ -11,6 +11,12 @@ module.exports = {
       message: "git pull"
     }
   }, {
+    method: "local.set",
+    params: {
+      python_path: "{{platform === 'win32' ? 'app/backend/conda_env/python' : 'app/backend/conda_env/bin/python'}}",
+      node_path: "{{platform === 'win32' ? 'app/backend/conda_env' : 'app/backend/conda_env/bin'}}",
+    }
+  }, {
     method: "shell.run",
     params: {
       conda: {
