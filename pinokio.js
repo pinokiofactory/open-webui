@@ -40,6 +40,7 @@ module.exports = {
         if (local && local.url) {
           let o = [{
             default: true,
+            popout: true,
             icon: "fa-solid fa-rocket",
             text: "Open Web UI",
             href: local.url,
