@@ -40,6 +40,9 @@ module.exports = {
   }, {
     "method": "shell.run",
     "params": {
+      "env": {
+        "NODE_OPTIONS": "--max_old_space_size=4096"
+      },
       "conda": {
         "path": "backend/conda_env",
       },
