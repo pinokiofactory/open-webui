@@ -93,11 +93,17 @@ module.exports = {
           menu: models.map((model) => {
             return {
               icon: "fa-solid fa-circle-down",
-              text: `${model.id} (${model.size})`,
-              href: "down.js",
-              params: {
-                id: model.id
-              }
+              text: model.name,
+              menu: model.model.map((m) => {
+                return {
+                  icon: "fa-solid fa-circle-down",
+                  text: `${m.id} (${m.size})`,
+                  href: "down.js",
+                  params: {
+                    id: m.id
+                  }
+                }
+              })
             }
           })
         }, {
