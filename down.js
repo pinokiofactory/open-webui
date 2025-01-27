@@ -2,7 +2,7 @@ module.exports = {
   "run": [{
     "method": "shell.run",
     "params": {
-      "message": "ollama pull {{args.name}}"
+      "message": "ollama pull {{args.id}}"
     }
   }, {
     "method": "input",

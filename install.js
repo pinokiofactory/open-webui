@@ -4,15 +4,15 @@ module.exports = {
     "params": {
       "venv": "env",
       "venv_python": "3.11",
-      "path": "app/backend",
+      "path": "app",
       "message": [
         "uv pip install open-webui"
       ]
     }
-//  }, {
-//    "method": "fs.link",
-//    "params": {
-//      "venv": "app/backend/env"
-//    }
+  }, {
+    "method": "fs.link",
+    "params": {
+      "venv": "app/env"
+    }
   }]
 }
