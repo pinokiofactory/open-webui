@@ -1,7 +1,7 @@
 const path = require('path')
 const models = require("./models")
 module.exports = {
-  version: "2.0",
+  version: "3.0",
   title: "Open WebUI",
   description: "User-friendly WebUI for LLMs, supported LLM runners include Ollama and OpenAI-compatible APIs https://github.com/open-webui/open-webui",
   icon: "icon.png",
