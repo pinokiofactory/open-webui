@@ -45,7 +45,7 @@ module.exports = {
               return {
                 icon: "fa-solid fa-circle-down",
                 text: model.name,
-                menu: model.model.map((m) => {
+                menu: model.models.map((m) => {
                   return {
                     icon: "fa-solid fa-circle-down",
                     text: `${m.id} (${m.size})`,
@@ -94,7 +94,7 @@ module.exports = {
             return {
               icon: "fa-solid fa-circle-down",
               text: model.name,
-              menu: model.model.map((m) => {
+              menu: model.models.map((m) => {
                 return {
                   icon: "fa-solid fa-circle-down",
                   text: `${m.id} (${m.size})`,
