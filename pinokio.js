@@ -38,6 +38,19 @@ module.exports = {
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
             href: "start.js",
+          }, {
+            icon: "fa-solid fa-download",
+            text: "Download Models",
+            menu: models.map((model) => {
+              return {
+                icon: "fa-solid fa-circle-down",
+                text: `${model.id} (${model.size})`,
+                href: "down.js",
+                params: {
+                  id: model.id
+                }
+              }
+            })
           }]
           return o
         } else {
