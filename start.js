@@ -5,16 +5,9 @@ module.exports = async (kernel) => {
     "run": [{
       "method": "shell.run",
       "params": {
-        "conda": {
-          "path": "conda_env",
-        },
-        "path": "app/backend",
-        "env": {
-          PORT,
-          HOST: "127.0.0.1"
-        },
+        "path": "app",
         "venv": "env",
-        "message": "{{platform === 'win32' ? 'start_windows.bat' : 'bash start.sh'}}",
+        "message": `open-webui serve --port ${PORT} --host 127.0.0.1`,
         "on": [{ "event": "/http://[0-9.:]+/", "done": true }]
       }
     }, {
