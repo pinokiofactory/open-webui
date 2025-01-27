@@ -6,12 +6,8 @@ module.exports = async (kernel) => {
       "method": "shell.run",
       "params": {
         "path": "app",
-        "env": {
-          PORT,
-          HOST: "127.0.0.1"
-        },
         "venv": "env",
-        "message": "open-webui serve",
+        "message": `open-webui serve --port ${PORT} --host ${HOST}`,
         "on": [{ "event": "/http://[0-9.:]+/", "done": true }]
       }
     }, {
