@@ -5,7 +5,7 @@ module.exports = async (kernel) => {
     "run": [{
       "method": "shell.run",
       "params": {
-        "path": "app/backend",
+        "path": "app",
         "env": {
           PORT,
           HOST: "127.0.0.1"
