@@ -9,10 +9,5 @@ module.exports = {
         "uv pip install open-webui"
       ]
     }
-  }, {
-    "method": "fs.link",
-    "params": {
-      "venv": "app/env"
-    }
   }]
 }
