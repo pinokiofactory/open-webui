@@ -11,7 +11,7 @@ module.exports = {
       venv_python: "3.11",
       path: "app",
       message: [
-        "uv pip install open-webui"
+        "uv pip install open-webui -U"
       ]
     }
   }]
