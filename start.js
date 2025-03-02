@@ -8,12 +8,13 @@ module.exports = async (kernel) => {
         "path": "app",
         "venv": "env",
         "message": `open-webui serve --port ${PORT} --host 127.0.0.1`,
-        "on": [{ "event": "/http://[0-9.:]+/", "done": true }]
+        //"on": [{ "event": "/http://[0-9.:]+/", "done": true }]
+        "on": [{ "event": "/Started server process/i", "done": true }]
       }
     }, {
       "method": "local.set",
       "params": {
-        "url": "{{input.event[0]}}"
+        "url": `http://127.0.0.1:${PORT}`
       }
     }]
   }
