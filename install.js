@@ -7,7 +7,7 @@ module.exports = {
       "path": "app",
       "message": [
         "uv pip install open-webui -U",
-        "uv pip install onnxruntime==1.20.1"
+        "uv pip install onnxruntime==1.20.1 itsdangerous"
       ]
     }
   }]
